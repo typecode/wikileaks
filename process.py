@@ -4,6 +4,7 @@ import re
 import sys
 import xml
 import csv
+import subprocess
 
 import nltk
 
@@ -38,6 +39,20 @@ class Cable():
     
   def get(self):
     return self.attrs
+    
+class CableGateMirror():
+  
+  mirror_directory = 'data/cablegate/'
+  
+  def __init__(self):
+    logging.info('CableGateMirror()')
+    self.update()
+    
+  def update(self):
+    logging.info('CableGateMirror.update')
+    #subprocess.call(["httrack",'--update'],cwd=self.mirror_directory)
+    Processor()
+    
 
 class Processor():
   
@@ -48,7 +63,12 @@ class Processor():
   country_frequency = nltk.probability.FreqDist()
   
   file_regex = re.compile("\.html$")
-  files_read = 0
+  
+  counts = {
+    'files_to_process':0,
+    'files_processed':0,
+    'files_not_processed':0
+  }
   
   def __init__(self):
     logging.info('Processor()')
@@ -75,23 +95,20 @@ class Processor():
     try:
       for root, dirs, files in os.walk(self.data_directory):
         for name in files:
-          #following two lines just for dev.
-          #limits # of files read to 1
-          #if self.files_read > 0:
-          #  return
           if self.file_regex.search(name) is not None:
             path = root+"/"+name
+            self.counts['files_to_process'] = self.counts['files_to_process'] + 1
             self.read_file(path)
     except OSError:
       logging.info(str(OSError))
   
   def read_file(self,path):
     logging.info('Processor.read_file')
-    self.files_read = self.files_read + 1
     try:
       file = open(path)
     except OSError:
       logging.warning('Processor.CANNOT OPEN FILE '+path)
+      self.counts['files_not_processed'] = self.counts['files_not_processed'] + 1
       return
     self.extract_content(file.read())
     
@@ -103,7 +120,9 @@ class Processor():
     cable_id = cable_table.findAll('tr')[1].findAll('td')[0]\
       .contents[1].contents[0]
     if db.cables.find_one({'_id':cable_id}):
+      self.counts['files_not_processed'] = self.counts['files_not_processed'] + 1
       logging.info('Processor.extract_content["CABLE ALREADY EXISTS"]')
+      self.print_counts()
       return
       
     cable = Cable(raw)
@@ -120,5 +139,22 @@ class Processor():
     
     db.cables.insert(cable.get())
     
-Processor()
+    self.counts['files_processed'] = self.counts['files_processed'] + 1
+    
+    self.print_counts()
+    
+    if (self.counts['files_processed'] + self.counts['files_not_processed'])\
+      == self.counts['files_to_process']:
+      self.dump_json()
+  
+  def print_counts(self):
+    logging.info('Processor.print_counts')
+    logging.info(str(self.counts['files_to_process'])+" | "+\
+      str(self.counts['files_processed'])+" | "+\
+      str(self.counts['files_not_processed']))
+  
+  def dump_json(self):
+    logging.info('Processor.dump_json')
+    
+CableGateMirror()
     

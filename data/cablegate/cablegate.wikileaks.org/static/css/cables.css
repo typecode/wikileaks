@@ -32,7 +32,7 @@ h2 {
 	margin-bottom: 8px;
 	margin-top: 14px;
 	margin-right: 12px;
-	text-align: right;
+	text-align: left;
 }
 
 h3 {
@@ -256,4 +256,30 @@ dd {
 
 table.cable td.b0 {
 	border: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+
+/* This is used by spip */
+
+.rightcol {
+    float: right;
+}
+.langlist {
+    width: 220px;
+    border: 1px solid #ccc;
+    margin: 4px;
+    padding: 4px;
+    font-size: 13px;
+}
+.morearticles {
+    width: 220px;
+    border: 1px solid #ccc;
+    margin: 4px;
+    padding: 4px;
+    margin-top: 20px;
+    font-size: 13px;
 }

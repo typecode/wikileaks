@@ -1,0 +1,6 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+15:45:36	438/438	---M--	404	error ('Not%20Found')	text/html	date:Mon,%2029%20Nov%202010%2020:45:36%20GMT	http://cablegate.wikileaks.org/robots.txt		(from )
+15:45:37	23499/23499	U-----	200	untouched ('OK')	text/html	etag:%224004100-5bcb-4963113e23b80%22	http://cablegate.wikileaks.org/	cablegate.wikileaks.org/index.html	(from )
+15:45:37	438/438	---M--	404	error ('Not%20Found')	text/html	date:Mon,%2029%20Nov%202010%2020:45:37%20GMT	http://cablegate.wikileaks.org/static/cablegate-.7z.torrent	cablegate.wikileaks.org/static/cablegate-.7z.120.delayed	(from )
+15:45:37	9662/9662	U-----	200	untouched ('OK')	image/x-icon	etag:%222bd8b-25be-489f414c01200%22	http://cablegate.wikileaks.org/static/gfx/favicon.ico	cablegate.wikileaks.org/static/gfx/favicon.ico	(from http://cablegate.wikileaks.org/)
+15:45:38	6226/6226	U-----	200	untouched ('OK')	text/css	etag:%222bd88-1852-48d2545312e40%22	http://cablegate.wikileaks.org/static/css/reset-fonts-grids.css	cablegate.wikileaks.org/static/css/reset-fonts-grids.css	(from http://cablegate.wikileaks.org/)

@@ -1,0 +1,35 @@
+88888888888                               d88P  .d8888b.                888          
+    888                                  d88P  d88P  Y88b               888          
+    888                                 d88P   888    888               888          
+    888  888  888 88888b.   .d88b.     d88P    888         .d88b.   .d88888  .d88b.  
+    888  888  888 888 "88b d8P  Y8b   d88P     888        d88""88b d88" 888 d8P  Y8b 
+    888  888  888 888  888 88888888  d88P      888    888 888  888 888  888 88888888 
+    888  Y88b 888 888 d88P Y8b.     d88P       Y88b  d88P Y88..88P Y88b 888 Y8b.     
+    888   "Y88888 88888P"   "Y8888 d88P         "Y8888P"   "Y88P"   "Y88888  "Y8888  
+              888 888                                                                
+         Y8b d88P 888                                                                
+          "Y88P"  888                                                                
+    
+    Wikileaks CableGate Processing
+    andrew@typeslashcode.com
+    v0.0.0.0.0.1
+    
+    Prerequisites:
+      HTTrack (http://www.httrack.com/httrack-3.43-9C.tar.gz)
+        *to update mirror of cablegate site
+      MongoDB (www.mongodb.org)
+        *database to store parsed cables
+        *ouputs json dump
+    
+    Functionality:
+      Will update Cablegate Web Mirror, and pull all existing cables into a 
+        MongoDB Collection where their 'Reference ID' is their '_id', and they
+        contain the following properties:
+          'reference_id','date_time','classification','origin','header','body'
+    
+    Usage:
+      Make sure that mongod is running. The software is configured to access
+        Mongod at it's default location, so change that if necessary.
+      Confirm that httrack and mongoexport are accesable in your PATH.
+      run 'python process.py'
+      
