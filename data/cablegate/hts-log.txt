@@ -1,0 +1,20 @@
+HTTrack3.43-9+htsswf+htsjava launched on Sun, 28 Nov 2010 22:51:24 at http://cablegate.wikileaks.org +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Pxs2u1%s%uN0%I0p3DaK0H0%kf2A999999%c10%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2010], %s -->" -%l "en, en, *" http://cablegate.wikileaks.org -O1 "E:\cablegate\CableGate 2010-11" +*.png +*.gif +*.jpg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+22:51:24	Warning: 	* security warning: maximum bandwidth limited to 100000 to avoid server overload
+22:51:24	Warning: 	* security warning: maximum number of connections per second limited to 5.000000 to avoid server overload
+22:51:24	Warning: 	File not parsed, looks like binary: cablegate.wikileaks.org/robots.txt
+22:52:25	Info: 	engine: warning: entry cleaned up, but no trace on heap: cablegate.wikileaks.org/static/graphic.png (E:/cablegate/CableGate 2010-11/cablegate.wikileaks.org/static/graphic.png)
+22:53:23	Warning: 	Unexpected 412/416 error (Requested Range Not Satisfiable) for cablegate.wikileaks.org/static/graphic.png
+22:53:23	Error: 	"Not Found" (404) at link cablegate.wikileaks.org/static/gfx/moneybookersLogo.png (from cablegate.wikileaks.org/static/css/cables.css)
+22:53:23	Error: 	"Not Found" (404) at link cablegate.wikileaks.org/static/gfx/paypalLogo.png (from cablegate.wikileaks.org/static/css/cables.css)
+22:53:23	Error: 	"Not Found" (404) at link cablegate.wikileaks.org/static/gfx/wauhollandLogo.png (from cablegate.wikileaks.org/static/css/cables.css)
+22:53:23	Error: 	"Not Found" (404) at link cablegate.wikileaks.org/static/gfx/flattrLogo.png (from cablegate.wikileaks.org/static/css/cables.css)
+
+HTTrack Website Copier/3.43-9 mirror complete in 2 minutes 4 seconds : 510 links scanned, 502 files written (13200785 bytes overall) [3504317 bytes received at 28260 bytes/sec], 13142223 bytes transfered using HTTP compression in 502 files, ratio 24%, 56.7 requests per connection
+(4 errors, 4 warnings, 1 messages)
