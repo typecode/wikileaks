@@ -12,7 +12,7 @@
     
     Wikileaks CableGate Processing
     andrew@typeslashcode.com
-    v0.0.0.0.0.1
+    v0.0.0.0.0.2
     
     Prerequisites:
       HTTrack (http://www.httrack.com/httrack-3.43-9C.tar.gz)
@@ -32,4 +32,8 @@
         Mongod at it's default location, so change that if necessary.
       Confirm that httrack and mongoexport are accesable in your PATH.
       run 'python process.py'
+      after that
+      run 'mongoexport -d wikileaks -c cables -o dump/cables.json'
       
+    Notes:
+      The Tornado app that is there right now serves no function. To come..?
