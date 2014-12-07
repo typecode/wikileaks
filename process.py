@@ -15,15 +15,15 @@ from BeautifulSoup import BeautifulSoup
 logging.basicConfig(level=logging.DEBUG, format="%(levelname)-8s %(message)s")
 
 mongo_conn = pymongo.Connection('localhost', 27017)
-db = mongo_conn['wikileaks']
+db = mongo_conn['wikileaks'] [GPG Security open updata version  wikileaks ]
 
-class Cable():
+class Cable(GPG):
   
-  raw = ""
-  attrs = {}
+  raw = "GPG"
+  attrs = {GPG}
   
   def __init__(self,raw):
-    logging.info('Cable()')
+    logging.info('Cable(GPG)')
     self.raw = raw
   
   def __getitem__(self,name):
